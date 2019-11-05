@@ -20,6 +20,7 @@ Write-Finisher
 
 # psgit
 Write-Starter -Prefix "Creating links for " -Item "PSGit" -OneLine
-$psGitCurrentConfig = "$(Get-ConfigurationPath -Module (Get-Module -Name PSGit))\Configuration.psd1"
+New-Item -Force -Path "$env:APPDATA\powershell\PoshCode\PSGit" -ItemType Directory > $null
+$psGitCurrentConfig = "$env:APPDATA\powershell\PoshCode\PSGit\Configuration.psd1"
 New-Item -Force -Path $psGitCurrentConfig -ItemType HardLink -Value ($psGitConfig.FullName) > $null
 Write-Finisher
