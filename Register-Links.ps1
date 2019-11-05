@@ -14,13 +14,16 @@ Write-Finisher
 
 # alacritty
 Write-Starter -Prefix "Creating links for " -Item "alacritty" -OneLine
+# Create alacritty dir
 New-Item -Force -Path "$env:APPDATA\alacritty" -ItemType Directory > $null
 New-Item -Force -Path "$env:APPDATA\alacritty\alacritty.yml" -ItemType HardLink -Value ($alacrittyConfig.FullName) > $null
 Write-Finisher
 
 # psgit
-Write-Starter -Prefix "Creating links for " -Item "PSGit" -OneLine
-New-Item -Force -Path "$env:APPDATA\powershell\PoshCode\PSGit" -ItemType Directory > $null
 $psGitCurrentConfig = "$env:APPDATA\powershell\PoshCode\PSGit\Configuration.psd1"
+
+Write-Starter -Prefix "Creating links for " -Item "PSGit" -OneLine
+# Create config dir
+New-Item -Force -Path "$env:APPDATA\powershell\PoshCode\PSGit" -ItemType Directory > $null
 New-Item -Force -Path $psGitCurrentConfig -ItemType HardLink -Value ($psGitConfig.FullName) > $null
 Write-Finisher
