@@ -4,6 +4,7 @@ $pwshProfile = Get-Item .\pwsh\profile.ps1
 $psGitConfig = Get-Item .\pwsh\psgit-config.psd1
 $alacrittyConfig = Get-Item .\alacritty\alacritty.yml
 $vsCodeConfig = Get-Item .\vscode\settings.json
+$windowsTerminalConfig = Get-Item .\windows-terminal\profiles.json
 
 . .\ColorPrompts.ps1
 
@@ -38,4 +39,13 @@ Write-Starter -Prefix "Creating links for " -Item "VS Code" -OneLine
 # Create config dir
 New-Item -Force -Path "$env:APPDATA\Code\User" -ItemType Directory > $null
 New-Item -Force -Path $vscodeCurrentConfig -ItemType SymbolicLink -Value ($vsCodeConfig.FullName) > $null
+Write-Finisher
+
+# windows-terminal
+$windowsTerminalCurrentConfig = "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json"
+
+Write-Starter -Prefix "Creating links for " -Item "Windows Terminal" -OneLine
+# Create config dir
+New-Item -Force -Path "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" -ItemType Directory > $null
+New-Item -Force -Path $windowsTerminalCurrentConfig -ItemType SymbolicLink -Value ($windowsTerminalConfig.FullName) > $null
 Write-Finisher
