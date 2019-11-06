@@ -6,8 +6,8 @@ $alacrittyConfig = Get-Item .\alacritty\alacritty.yml
 
 . .\ColorPrompts.ps1
 
-# Use HardLinks as they do not require elevation
-# See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-6
+# Use symbolic links as they are as easily broken as hard links
+# But symbolic links require elevation
 
 # pwsh
 Write-Starter -Prefix "Creating links for " -Item "pwsh" -OneLine
