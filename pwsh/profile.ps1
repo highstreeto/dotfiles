@@ -17,7 +17,8 @@ function Get-PowerLineLocation () {
         foreach ($dir in $dirs | Select-Object -Last $MaxSegmentCount) {
             New-PromptText -Bg "#083FA0" -Fg White $dir
         }
-    } else {
+    }
+    else {
         foreach ($dir in $dirs) {
             New-PromptText -Bg "#083FA0" -Fg White $dir
         }
@@ -31,6 +32,27 @@ Set-PowerLinePrompt -SetCurrentDirectory -RestoreVirtualTerminal -PowerLineFont 
     { "`t" }
     { New-PromptText -Fg White (Get-Elapsed) }
     { New-PromptText -Fg White (Get-Date -f "T") }
+    # For child processes
+    # {
+    #     $childProcs = Get-Process | Where-Object { $_.Parent.Id -eq $PID }
+    #     if ($childProcs) {
+    #         "`n"
+    #         $childProcs |
+    #             Select-Object -ExpandProperty Name |
+    #             Join-String -OutputPrefix "Childs: " -Separator ", " |
+    #             New-PromptText -Bg "#333333" -Fg Gray
+    #     }
+    # }
+    {
+        $jobs = Get-Job -State Running
+        if ($jobs) {
+            "`n"
+            $jobs |
+                ForEach-Object {"@$($_.Id)"} |
+                Join-String -OutputPrefix "Jobs: " -Separator ", " |
+                New-PromptText -Bg "#333333" -Fg Gray
+        }
+    }
     { "`n" }
     { New-PromptText -Fg Green -EFg Red -Bg Black "❯" }
 ) -Colors Blue, DarkBlue, DarkBlue, Blue
