@@ -339,7 +339,8 @@ live_config_reload: true
 shell:
   program: powershell
   args:
-    - -Command pwsh -wd ~
+    - -NoProfile
+    - -Command pwsh
 
 # Startup directory
 #

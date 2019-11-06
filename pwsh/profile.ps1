@@ -1,5 +1,5 @@
-#requires -Modules @{ ModuleName='Pansies'; ModuleVersion='1.2.1' }
-#requires -Modules @{ ModuleName='PowerLine'; ModuleVersion='3.1.2' }
+#Requires -Modules @{ ModuleName='Pansies'; ModuleVersion='1.2.1' }
+#Requires -Modules @{ ModuleName='PowerLine'; ModuleVersion='3.1.2' }
 #Requires -Modules @{ ModuleName='PSGit'; ModuleVersion='2.1.0' }
 
 Import-Module PSGit
