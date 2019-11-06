@@ -21,4 +21,4 @@ My dotfiles for Windows
 * PSGit
   * `$env:APPDATA\powershell\PoshCode\PSGit\Configuration.psd1`
 * Windows Terminal
-  * `\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json`
+  * `$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json`
