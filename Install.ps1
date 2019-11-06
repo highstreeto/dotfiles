@@ -17,8 +17,8 @@ sudo sudo scoop install -g pwsh
 
 # Clone Powerline fonts
 if (!(Test-Path powerline_fonts)) {
-    Write-Starter -Prefix "Cloning and installing " -Item "powerline_fonts"
-    git clone https://github.com/powerline/fonts.git powerline_fonts
+    Write-Starter -Prefix "Cloning and installing " -Item "powerline-fonts"
+    git clone https://github.com/powerline/fonts.git powerline-fonts
     .\powerline_fonts\install.ps1 "DejaVu Sans Mono*"
     Write-Finisher
 }
