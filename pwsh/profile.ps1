@@ -2,6 +2,7 @@
 #Requires -Modules @{ ModuleName='PowerLine'; ModuleVersion='3.1.2' }
 #Requires -Modules @{ ModuleName='PSGit'; ModuleVersion='2.1.0' }
 
+[Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
 Import-Module PSGit
 
 function Get-PowerLineLocation () {
