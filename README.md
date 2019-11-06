@@ -8,8 +8,17 @@ My dotfiles for Windows
 
 ## Initial Setup 
 
-> `./Install.ps1`
+`./Install.ps1`
 
 ## Register Links 
 
-> `./Register-Links.ps1`
+`./Register-Links.ps1`
+
+## Location of configuration files (on Windows)
+
+* Alacritty
+  * `$env:APPDATA\alacritty\alacritty.yml`
+* PSGit
+  * `$env:APPDATA\powershell\PoshCode\PSGit\Configuration.psd1`
+* Windows Terminal
+  * `\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json`
