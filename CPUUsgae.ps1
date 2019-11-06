@@ -14,7 +14,7 @@ function Get-SumOfCpuUsage() {
     $sum
 }
 
-$cpus = (Get-ComputerInfo).CsNumberOfLogicalProcessors
+$cpus = [System.Environment]::ProcessorCount
 $data = @()
 while ($true) {
     $startTime = Get-Date
