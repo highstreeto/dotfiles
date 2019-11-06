@@ -1,0 +1,85 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 1,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorCustomizations": {
+        "editorWarning.foreground": "#ffff00e4",
+        "list.warningForeground": "#ffff00e4",
+    },
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontLigatures": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "vsicons.projectDetection.autoReload": true,
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "explorer",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.search.location": "scm",
+    "gitlens.views.compare.location": "scm",
+    "cmake.configureOnOpen": true,
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "cSpell.language": "de,en",
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "pub",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yml"
+    ],
+    "cSpell.userWords": [
+        "Hochstrasser",
+    ],
+}
