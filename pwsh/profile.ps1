@@ -5,9 +5,22 @@
 Import-Module PSGit
 
 function Get-PowerLineLocation () {
-    $paths = (Get-Location).ProviderPath.Split([System.IO.Path]::DirectorySeparatorChar)
-    foreach ($dir in $paths) {
-        New-PromptText -Bg "#083FA0" -Fg White $dir
+    [CmdletBinding()]
+    param (
+        [Parameter()]
+        [int]
+        $MaxSegmentCount = 5
+    )
+    $dirs = (Get-Location).ProviderPath.Split([System.IO.Path]::DirectorySeparatorChar)
+    if ($dirs.Count -gt $MaxSegmentCount) {
+        New-PromptText -Bg "#083FA0" -Fg White "..."
+        foreach ($dir in $dirs | Select-Object -Last $MaxSegmentCount) {
+            New-PromptText -Bg "#083FA0" -Fg White $dir
+        }
+    } else {
+        foreach ($dir in $dirs) {
+            New-PromptText -Bg "#083FA0" -Fg White $dir
+        }
     }
 }
 
