@@ -1,19 +1,27 @@
 . .\ColorPrompts.ps1
 
+if ($null -eq (Get-Command pwsh -ErrorAction SilentlyContinue)) {
+    Write-Error "PowerShell Core must be installed!"
+}
+
 Install-Module Pansies -AllowClobber
 Install-Module PowerLine
 Install-Package PSGit
 
-# Installing scoop
+# Installing scoop if necassary
 if ($null -eq (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Starter -Prefix "Installing " -Item "scoop"
     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
     Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+    Write-Finisher
 }
 
-scoop install sudo
-scoop install alacritty
-sudo sudo scoop install -g pwsh
+# Installing alacrity if necassary
+if ($null -eq (Get-Command alacritty -ErrorAction SilentlyContinue)) {
+    Write-Starter -Prefix "Installing " -Item "alacritty"
+    scoop install alacritty
+    Write-Finisher
+}
 
 # Clone Powerline fonts
 if (!(Test-Path powerline-fonts)) {
