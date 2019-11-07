@@ -25,4 +25,6 @@ My dotfiles for Windows
 
 ## TODOs
 
-* [] Replace DejaVu Sans Mono for Powerline with [nerd_fonts](https://github.com/ryanoasis/nerd-fonts)
+* [ ] Replace DejaVu Sans Mono for Powerline with [nerd_fonts](https://github.com/ryanoasis/nerd-fonts)
+* [ ] Replace `Set-PowerLinePrompt` with loading of configuration (similar to PSGit)
+  * Could be faster, investigate!
