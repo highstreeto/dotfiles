@@ -22,3 +22,7 @@ My dotfiles for Windows
   * `$env:APPDATA\powershell\PoshCode\PSGit\Configuration.psd1`
 * Windows Terminal
   * `$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json`
+
+## TODOs
+
+* [] Replace DejaVu Sans Mono for Powerline with [nerd_fonts](https://github.com/ryanoasis/nerd-fonts)
