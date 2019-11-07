@@ -24,6 +24,11 @@ function Install-Fonts {
             Copy-Item -Path $fontFile -Destination $tempDir
         }
     }
-    $fonts.CopyHere($tempDirShell.Items())
-    Remove-Item -Force -Recurse $tempDir
+    if (($tempDir | Get-ChildItem).Count -gt 0) {
+        $fonts.CopyHere($tempDirShell.Items())
+    }
+    
+    if ($tempDir) {
+        Remove-Item -Force -Recurse $tempDir
+    }
 }

@@ -35,7 +35,17 @@ Set-PowerLinePrompt -SetCurrentDirectory -RestoreVirtualTerminal -PowerLineFont 
         $battery = Get-CimInstance Win32_Battery -ErrorAction SilentlyContinue
         if ($battery) {
             $remainingCharge = $battery.EstimatedChargeRemaining
-            New-PromptText -Bg DarkGreen -Fg White "|$remainingCharge%|"
+            if ($remainingCharge -ge 95) {
+                New-PromptText -Bg Black -Fg DarkGreen "  "
+            } elseif ($remainingCharge -ge 80) {
+                New-PromptText -Bg Black -Fg DarkGreen "  "
+            } elseif ($remainingCharge -ge 50 ) {
+                New-PromptText -Bg Black -Fg DarkGreen "  "
+            } elseif ($remainingCharge -ge 20) {
+                New-PromptText -Bg Black -Fg DarkGreen "  "
+            } else {
+                New-PromptText -Bg Black -Fg DarkGreen "  "
+            }
         }
     }
     { New-PromptText -Fg White (Get-Elapsed) }

@@ -2,6 +2,9 @@
 . .\Install-Fonts.ps1
 
 $firaCodeDownloadUri = "https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip"
+$nerdFontsDejaVuSansMono = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/DejaVuSansMono.zip"
+# Nerd Fonts Fira Code is a bit weird - so just use standard fira code
+# $nerdFontsFiraCodeDownloadUri = "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/FiraCode.zip"
 
 if ($null -eq (Get-Command pwsh -ErrorAction SilentlyContinue)) {
     Write-Error "PowerShell Core must be installed!"
@@ -26,23 +29,27 @@ if ($null -eq (Get-Command alacritty -ErrorAction SilentlyContinue)) {
     Write-Finisher
 }
 
-# Clone and install Powerline fonts
-if (!(Test-Path powerline-fonts)) {
-    Write-Starter -Prefix "Cloning and installing " -Item "powerline-fonts"
-    git clone https://github.com/powerline/fonts.git powerline-fonts
-    .\powerline-fonts\install.ps1 "DejaVu Sans Mono*"
-    Write-Finisher
-}
-
 # Downlaod and install Fira Code
 if (!(Test-Path fira-code)) {
-    Write-Starter -Prefix "Downloading and installing " -Item "Fira Code"
+    Write-Starter -Prefix "Downloading and installing " -Item "Fira Code" -OneLine
     Invoke-WebRequest -Uri $firaCodeDownloadUri -OutFile "FiraCode_2.zip"
     Expand-Archive -Path "FiraCode_2.zip" -DestinationPath "fira-code"
     $fonts = Get-ChildItem .\fira-code\ttf
     Install-Fonts -FontFiles $fonts
 
     Remove-Item "FiraCode_2.zip"
+    Write-Finisher
+}
+
+# Downlaod and install Nerd Fonts DejaVu Sans Mono
+if (!(Test-Path nerd-fonts-dejavu)) {
+    Write-Starter -Prefix "Downloading and installing " -Item "Nerd Fonts DejaVu Sans Mono" -OneLine
+    Invoke-WebRequest -Uri $nerdFontsDejaVuSansMono -OutFile "NFDejaVuSansMono.zip"
+    Expand-Archive -Path "NFDejaVuSansMono.zip" -DestinationPath "nerd-fonts-dejavu"
+    $fonts = Get-ChildItem ".\nerd-fonts-dejavu\*Complete Windows Compatible.ttf"
+    Install-Fonts -FontFiles $fonts
+
+    Remove-Item "NFDejaVuSansMono.zip"
     Write-Finisher
 }
 
