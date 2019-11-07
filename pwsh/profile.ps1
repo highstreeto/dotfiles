@@ -28,7 +28,7 @@ function Get-PowerLineLocation () {
 
 Set-PowerLinePrompt -SetCurrentDirectory -RestoreVirtualTerminal -PowerLineFont -FullColor -Prompt @(
     { New-PromptText -Bg "#196DFF" -ElevatedBackgroundColor "#FF5D00" -Fg White $MyInvocation.HistoryId }
-    { Get-PowerLineLocation }
+    { Get-PowerLineLocation -MaxSegmentCount 4 }
     { Get-GitStatusPowerLine }
     { "`t" }
     {
