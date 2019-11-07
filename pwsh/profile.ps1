@@ -31,6 +31,13 @@ Set-PowerLinePrompt -SetCurrentDirectory -RestoreVirtualTerminal -PowerLineFont 
     { Get-PowerLineLocation }
     { Get-GitStatusPowerLine }
     { "`t" }
+    {
+        $battery = Get-CimInstance Win32_Battery -ErrorAction SilentlyContinue
+        if ($battery) {
+            $remainingCharge = $battery.EstimatedChargeRemaining
+            New-PromptText -Bg DarkGreen -Fg White "|$remainingCharge%|"
+        }
+    }
     { New-PromptText -Fg White (Get-Elapsed) }
     { New-PromptText -Fg White (Get-Date -f "T") }
     # For child processes
