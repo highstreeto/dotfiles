@@ -56,7 +56,7 @@ Set-PowerLinePrompt -SetCurrentDirectory -RestoreVirtualTerminal -PowerLineFont 
         if ($jobs) {
             "`n"
             $jobs |
-                ForEach-Object {"@$($_.Id)"} |
+                ForEach-Object { "@{0}" -f $_.Id } |
                 Join-String -OutputPrefix "Jobs: " -Separator ", " |
                 New-PromptText -Bg "#333333" -Fg Gray
         }
