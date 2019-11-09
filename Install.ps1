@@ -55,4 +55,4 @@ if (!(Test-Path nerd-fonts-dejavu)) {
 
 Write-Host -NoNewline "All Done! Use "
 Write-Host -NoNewline -ForegroundColor Cyan "Register-Links.ps1"
-Write-Host " to hook-up the configs."
+Write-Host " (run as admin) to hook-up the configs."
