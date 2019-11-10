@@ -38,6 +38,8 @@ My dotfiles for Windows
 * [x] Replace `Set-PowerLinePrompt` with loading of configuration (similar to PSGit)
   * Could be faster, investigate!
   * Loading takes 43ms with `Import-Module`, with `Set-PowerLinePrompt` it takes 90ms
+* [ ] Use `Get-ConfigurationPath` for Powershell module config lookup
+  * Works cross-plattform (tested on [mcr.microsoft.com/powershell:alpine-3.8](https://hub.docker.com/_/microsoft-powershell))
 * [ ] Generalize linking of config. files
   * Currently Copy-Paste => function would be better!
   * Input could be hash table with source and destination file
