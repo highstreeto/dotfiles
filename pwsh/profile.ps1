@@ -47,7 +47,7 @@ function Get-BatteryStatusPowerLine {
 
 
 [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
-Import-Module PSGit -NoClobber
+Import-Module PSGit
 Import-Module PowerLine
 
 $timer.Stop()
