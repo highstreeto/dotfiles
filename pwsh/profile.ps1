@@ -29,25 +29,26 @@ function Get-LocationPowerLine () {
 
 function Get-BatteryStatusPowerLine {
     $icons = @(
-        @{level = 97; icon = ""}
-        @{level = 90; icon = ""}
-        @{level = 80; icon = ""}
-        @{level = 70; icon = ""}
-        @{level = 60; icon = ""}
-        @{level = 50; icon = ""}
-        @{level = 40; icon = ""}
-        @{level = 30; icon = ""}
-        @{level = 20; icon = ""}
-        @{level = 10; icon = ""}
-        @{level = 0; icon = ""}
+        @{level = 97; icon = "" }
+        @{level = 90; icon = "" }
+        @{level = 80; icon = "" }
+        @{level = 70; icon = "" }
+        @{level = 60; icon = "" }
+        @{level = 50; icon = "" }
+        @{level = 40; icon = "" }
+        @{level = 30; icon = "" }
+        @{level = 20; icon = "" }
+        @{level = 10; icon = "" }
+        @{level = 0; icon = "" }
     )
     
     $battery = Get-CimInstance Win32_Battery -ErrorAction SilentlyContinue
     if ($battery) {
         $remainingCharge = $battery.EstimatedChargeRemaining
-        New-PromptText -Bg Black -Fg DarkGreen (
-            $icons | Where-Object {$_.level -le $remainingCharge} | Select-Object -First 1
-        )
+        $icon = $icons | Where-Object { $_.level -le $remainingCharge }
+        $icon = $icon[0].icon
+
+        New-PromptText -Bg Black -Fg DarkGreen $icon
     }
 }
 
