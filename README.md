@@ -44,5 +44,6 @@ My dotfiles for Windows
   * Currently Copy-Paste => function would be better!
   * Input could be hash table with source and destination file
 * [ ] Add CPU and RAM usage indicators to prompt
+  * Not easily done in a cross-plattform way
 * [ ] Adapt PSGit color scheme
   * Currently PowerLine provided colors => change to better fitting colors
