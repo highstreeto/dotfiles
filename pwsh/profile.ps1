@@ -46,6 +46,9 @@ function Get-BatteryStatusPowerLine {
     if ($battery) {
         $remainingCharge = $battery.EstimatedChargeRemaining
         $icon = $icons | Where-Object { $_.level -le $remainingCharge }
+        # Can not use Select-Object as this sets an internal errror System.Management.Automation.StopUpstreamCommandsException which PowerLine reports 
+        # See https://github.com/PowerShell/PowerShell/issues/9185
+        # Should be fixed with PS7
         $icon = $icon[0].icon
 
         New-PromptText -Bg Black -Fg DarkGreen $icon
