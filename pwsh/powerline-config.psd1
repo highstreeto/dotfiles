@@ -7,6 +7,7 @@
       Clear = '[0m'
     }
     PowerLineConfig = @{
+      HideErrors = $True
       Colors = @((RgbColor 'Blue'),(RgbColor 'DarkBlue'),(RgbColor 'DarkBlue'),(RgbColor 'Blue'))
       Prompt = @(
           (ScriptBlock ' New-PromptText -Bg "#196DFF" -ElevatedBackgroundColor "#FF5D00" -Fg White $MyInvocation.HistoryId '),
