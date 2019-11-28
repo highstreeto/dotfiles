@@ -47,3 +47,6 @@ My dotfiles for Windows
   * Not easily done in a cross-plattform way
 * [ ] Adapt PSGit color scheme
   * Currently PowerLine provided colors => change to better fitting colors
+* [ ] Look into [Starship](https://github.com/starship/starship) (works now on Windows)
+* [ ] Add Git config
+  * User and mail, autoclrf, editor
