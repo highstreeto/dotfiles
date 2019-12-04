@@ -10,10 +10,6 @@ if ($null -eq (Get-Command pwsh -ErrorAction SilentlyContinue)) {
     Write-Error "PowerShell Core must be installed!"
 }
 
-Install-Module Pansies -AllowClobber
-Install-Module PowerLine
-Install-Package PSGit
-
 # Installing scoop if necassary
 if ($null -eq (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Starter -Prefix "Installing " -Item "scoop"
@@ -26,6 +22,13 @@ if ($null -eq (Get-Command scoop -ErrorAction SilentlyContinue)) {
 if ($null -eq (Get-Command alacritty -ErrorAction SilentlyContinue)) {
     Write-Starter -Prefix "Installing " -Item "alacritty"
     scoop install alacritty
+    Write-Finisher
+}
+
+# Installing starship if necassary
+if ($null -eq (Get-Command starship -ErrorAction SilentlyContinue)) {
+    Write-Starter -Prefix "Installing " -Item "starship"
+    scoop install starship
     Write-Finisher
 }
 
