@@ -27,6 +27,7 @@
     "gitlens.views.search.location": "scm",
     "gitlens.views.compare.location": "scm",
     "todo-tree.highlights.enabled": true,
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|%|^)\\s*($TAGS)|^\\s*- \\[ \\])",
     "liveServer.settings.donotShowInfoMsg": true,
     "cmake.configureOnOpen": true,
     "latex-workshop.latex.tools": [
