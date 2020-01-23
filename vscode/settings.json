@@ -27,9 +27,22 @@
     "gitlens.views.search.location": "scm",
     "gitlens.views.compare.location": "scm",
     "todo-tree.highlights.enabled": true,
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|%|^)\\s*($TAGS)|^\\s*- \\[ \\])",
     "liveServer.settings.donotShowInfoMsg": true,
     "cmake.configureOnOpen": true,
     "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "--shell-escape",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
         {
             "name": "pdflatex",
             "command": "pdflatex",
@@ -47,13 +60,27 @@
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOC%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex -> pdflatex*2",
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> biber -> pdflatex",
             "tools": [
                 "pdflatex",
+                "biber",
                 "pdflatex"
             ]
         }
