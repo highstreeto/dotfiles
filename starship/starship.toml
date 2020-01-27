@@ -1,3 +1,6 @@
+add_newline = false
+
 [directory]
 truncate_to_repo = true
+use_logical_path = true
 #fish_style_pwd_dir_length = 3
