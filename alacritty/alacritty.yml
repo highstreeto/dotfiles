@@ -298,6 +298,8 @@ colors: *campbell
 #   - (Windows) powershell
 shell:
   program: pwsh
+  args:
+    - "-wd ~"
 
 # Startup directory
 #
