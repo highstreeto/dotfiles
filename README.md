@@ -3,11 +3,13 @@
 My dotfiles for Windows
 
 * Uses [Powershell Core](https://github.com/powershell/powershell)
-* Includes [PowerLine](https://github.com/Jaykul/PowerLine) support
-  * Shortened current path
-  * Git status (provided by [PSGit](https://github.com/PoshCode/PSGit))
-  * Battery level
-  * Currently running jobs
+* ~~Includes [PowerLine](https://github.com/Jaykul/PowerLine) support~~
+  * ~~Shortened current path~~
+  * ~~Git status (provided by [PSGit](https://github.com/PoshCode/PSGit))~~
+  * ~~Battery level~~
+  * ~~Currently running jobs~~
+  * Currently not included, as the current solution takes too long
+    * Seconds before pwsh is ready
 * Configs for
   * [Visual Studio Code](https://github.com/Microsoft/vscode)
   * [Alacritty](https://github.com/jwilm/alacritty)
