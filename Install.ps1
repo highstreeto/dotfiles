@@ -25,13 +25,6 @@ if ($null -eq (Get-Command alacritty -ErrorAction SilentlyContinue)) {
     Write-Finisher
 }
 
-# Installing starship if necassary
-if ($null -eq (Get-Command starship -ErrorAction SilentlyContinue)) {
-    Write-Starter -Prefix "Installing " -Item "starship"
-    scoop install starship
-    Write-Finisher
-}
-
 # Downlaod and install Fira Code
 if (!(Test-Path fira-code)) {
     Write-Starter -Prefix "Downloading and installing " -Item "Fira Code" -OneLine
