@@ -12,3 +12,9 @@ if ($childProcs) {
         New-PromptText -Bg "#333333" -Fg Gray
 }
 ```
+
+## Kill and remove all Docker containers
+
+```powershell
+docker ps -q -a | foreach { docker kill $_ *>&1 > $null; docker rm $_ }
+```
