@@ -75,17 +75,10 @@
             "tools": [
                 "latexmk"
             ]
-        },
-        {
-            "name": "pdflatex -> biber -> pdflatex",
-            "tools": [
-                "pdflatex",
-                "biber",
-                "pdflatex"
-            ]
         }
     ],
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.build.forceRecipeUsage": true,
     "cSpell.language": "de,en",
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -119,4 +112,13 @@
         "Alacritty",
         "Hochstrasser"
     ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "ltex.language": "de-AT",
+    "ltex.additionalRules.motherTongue": "de-AT",
+    "ltex.de-AT.dictionary": [
+        "Hochstrasser"
+    ],
+    "remote.SSH.remotePlatform": {
+        "pikube-master": "linux"
+    }
 }
